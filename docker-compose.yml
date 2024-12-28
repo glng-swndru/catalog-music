@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  db:
+    container_name: local-postgres
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: altocumulus_db
+    volumes:
+      - ./development_db:/var/lib/postgresql/data:rw
